@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {Component} from "react"
 import Scores from './Scores';
-import { Card,} from 'react-bootstrap';
+import './App.css';
+import Card from "react-bootstrap/Card";
 
 
 const Students = (props) => {
@@ -15,12 +16,17 @@ const Students = (props) => {
   });
 
   return(
-<>
-<div>name: {props.name}</div>
-<div>bio: {props.bio}</div>
+
+<Card style={{ width: '40rem' }}>
+  <Card.Body>
+<Card.Title>name: {props.name}</Card.Title>
+<Card.Text>bio: {props.bio}</Card.Text>
+<Card.Text>
 {scores}
-</>
-  )
+</Card.Text>
+</Card.Body>
+</Card>
+ )
 }
 
 export default Students;
