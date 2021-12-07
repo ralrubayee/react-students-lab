@@ -1,15 +1,25 @@
 import React from 'react';
-import score from './Score';
-import { Card, Button } from 'react-bootstrap';
+import Scores from './Scores';
+import { Card,} from 'react-bootstrap';
 
 
 const Students = (props) => {
+  const scores = props.scores.map((ele, index) => {
+    return (
+      <Scores 
+      date={ele.date}
+      score={ele.score}
+      key={index}
+      />
+    );
+  });
+
   return(
-<Card style={{ width: '50rem' }}>
-<Card.Title>name: {props.name}</Card.Title>
-<Card.Body>bio: {props.bio}</Card.Body>
-<score {...props.score}/>
-</Card>
+<>
+<div>name: {props.name}</div>
+<div>bio: {props.bio}</div>
+{scores}
+</>
   )
 }
 
